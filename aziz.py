@@ -1,4 +1,6 @@
 import collections
+import random
+
 def bfs(grid):
     #initation of the queue with the starting point
     queue = collections.deque([[(0,0)]])
@@ -25,7 +27,8 @@ def bfs(grid):
 
 def move(grid, M, N, x, y):
     dx,dy=bfs(grid)[0]
-    print(dx,dy)
+    mv=[ (dx, dy) for dx, dy in ((x+1,y), (x-1,y), (x,y+1), (x,y-1)) if 0 <= dx < len(grid) and 0 <= dy < len(grid[0])]
+    dx,dy=random.choice(mv)
     if (dx<x and dy==y):
         return("LEFT")
     elif (dx>x and dy==y):
