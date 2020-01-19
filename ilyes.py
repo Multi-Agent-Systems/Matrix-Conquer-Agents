@@ -11,13 +11,13 @@ def move(m,h,w,x,y):
   left=True
   right=True
 
-  if (y==0 or m[x][y-1]==2):
+  if (y==0 or m[x][y-1]==2 or m[x][y-1]==1):
     left=False
-  if (y==w-1 or m[x][y+1]==2):
+  if (y==w-1 or m[x][y+1]==2 or m[x][y+1]==1):
     right=False
-  if (x==0 or m[x-1][y]==2):
+  if (x==0 or m[x-1][y]==2 or m[x-1][y]==1):
     up=False
-  if (x==h-1 or m[x+1][y]==2):
+  if (x==h-1 or m[x+1][y]==2 or m[x+1][y]==1):
     down=False
 
 
