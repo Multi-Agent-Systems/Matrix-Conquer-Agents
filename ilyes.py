@@ -1,4 +1,6 @@
-def move(w,h,m,x,y):
+
+
+def move(m,w,h,x,y):
 
   up=True
   down=True
