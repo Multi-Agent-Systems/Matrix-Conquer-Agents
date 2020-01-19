@@ -4,6 +4,7 @@ import bilel as Ag1
 import ilyes as Ag2
 import aziz as Ag3
 import molk as Ag4
+import time
 
 # Define Matrix class
 
@@ -52,13 +53,13 @@ class Player:
         print(self.name,'is in',self.x,self.y)
 
     def move(self,team,dir,matrix):
-        if (dir.upper() == 'UP'):
+        if (dir == 'UP'):
             self.x = max(self.x-1, 0)
-        if (dir.upper() == 'DOWN'):
+        if (dir == 'DOWN'):
             self.x = min(self.x+1, matrix.N-1)
-        if (dir.upper() == 'LEFT'):
+        if (dir == 'LEFT'):
             self.y = max(self.y-1,0)
-        if (dir.upper() == 'RIGHT'):
+        if (dir == 'RIGHT'):
             self.y = min(self.y+1, matrix.M-1)
         matrix.set(team, self.x, self.y)
     
@@ -138,15 +139,16 @@ redTeam.info()
 i=0
 
 while (i < 4*N*M):
+    time.sleep(2)
     # The Agents scripts must code one single function called move:
     # move (grid, M, N, x, y)
     # With grid: the raw matrix (not the class)
     # M,N: matrix's dimensions
     # x,y: the current position of the player
     # move() must return a move string: "UP", "DOWN", "RIGHT", "LEFT", "NONE"
-    blueTeam.p1.move(1,Ag1.move(matrix.grid,M,N,blueTeam.p1.x,blueTeam.p1.y),matrix)
-    redTeam.p2.move(1,Ag3.move(matrix.grid,M,N,redTeam.p1.x,redTeam.p1.y),matrix)
-    blueTeam.p1.move(1,Ag2.move(matrix.grid,M,N,blueTeam.p2.x,blueTeam.p2.y),matrix)
-    redTeam.p2.move(1,Ag4.move(matrix.grid,M,N,redTeam.p2.x,redTeam.p2.y),matrix)
-    matrix.update()
+    #blueTeam.p1.move(1,Ag1.move(matrix.grid,M,N,blueTeam.p1.x,blueTeam.p1.y),matrix)
+    redTeam.p1.move(2,Ag3.move(matrix.grid,M,N,redTeam.p1.x,redTeam.p1.y,blueTeam.p1.x,blueTeam.p1.y,blueTeam.p2.x,blueTeam.p2.y),matrix)
+    #blueTeam.p2.move(1,Ag2.move(matrix.grid,M,N,blueTeam.p2.x,blueTeam.p2.y),matrix)
+    redTeam.p2.move(2,Ag4.move(matrix.grid,M,N,redTeam.p2.x,redTeam.p2.y),matrix)
+    #matrix.update()
     matrix.info()
