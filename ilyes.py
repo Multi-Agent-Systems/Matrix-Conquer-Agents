@@ -23,7 +23,7 @@ def move(m,h,w,x,y):
 
   up_nbr=0
   if (up):
-    up_mat=Matrix[0:x,:]
+    up_mat=m[0:x,:]
     for i in up_mat :
       for j in i :
         if j==0:
@@ -31,7 +31,7 @@ def move(m,h,w,x,y):
 
   down_nbr=0
   if (down):
-    down_mat=Matrix[x+1:h,:]
+    down_mat=m[x+1:h,:]
     for i in down_mat :
       for j in i :
         if j==0:
@@ -39,7 +39,7 @@ def move(m,h,w,x,y):
 
   left_nbr=0
   if (left):
-    left_mat=Matrix[:,0:y]
+    left_mat=m[:,0:y]
     for i in left_mat :
       for j in i :
         if j==0:
@@ -47,7 +47,7 @@ def move(m,h,w,x,y):
 
   right_nbr=0
   if (right):
-    right_mat=Matrix[:,y+1:w]
+    right_mat=m[:,y+1:w]
     for i in right_mat :
       for j in i :
         if j==0:
