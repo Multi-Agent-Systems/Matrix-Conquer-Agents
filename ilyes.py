@@ -68,7 +68,7 @@ def move(m,h,w,x,y):
   maxi= max(right_nbr,left_nbr,up_nbr,down_nbr)
 
   
-  if(x<h-int(h/4) or x>h/4 ):
+  if(x<h-int(h/4) and x>h/4 ):
       return("UP")
     
     
