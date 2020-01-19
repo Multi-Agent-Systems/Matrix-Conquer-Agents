@@ -1,6 +1,6 @@
 
 
-def move(m,w,h,x,y):
+def move(m,h,w,x,y):
 
   up=True
   down=True
@@ -64,10 +64,10 @@ def move(m,w,h,x,y):
   x= max(right_nbr,left_nbr,up_nbr,down_nbr)
 
   if (x==right_nbr):
-    return("right")
+    return("RIGHT")
   elif(x==left_nbr):
-    return("left")
+    return("LEFT")
   elif(x==up_nbr):
-    return("up")
+    return("UP")
   else:
-    return("down")
+    return("DOWN")
