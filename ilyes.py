@@ -1,6 +1,10 @@
 
 
 def move(m,h,w,x,y):
+  
+  import numpy as np
+  
+  m= np.asarray(m)
 
   up=True
   down=True
