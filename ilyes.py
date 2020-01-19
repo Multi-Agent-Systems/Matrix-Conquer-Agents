@@ -65,13 +65,18 @@ def move(m,h,w,x,y):
   #print("down",down_nbr)
   #print(down_mat)
 
-  x= max(right_nbr,left_nbr,up_nbr,down_nbr)
+  maxi= max(right_nbr,left_nbr,up_nbr,down_nbr)
 
-  if (x==right_nbr):
+  
+  if(x<h-int(h/4) or x>h/4 ):
+      return("UP")
+    
+    
+  elif (maxi==right_nbr):
     return("RIGHT")
-  elif(x==left_nbr):
+  elif(maxi==left_nbr):
     return("LEFT")
-  elif(x==up_nbr):
+  elif(maxi==up_nbr):
     return("UP")
   else:
     return("DOWN")
