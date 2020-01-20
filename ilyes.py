@@ -11,15 +11,25 @@ def move(m,h,w,x,y):
   left=True
   right=True
 
-  if (y==0 or m[x][y-1]==2 or m[x][y-1]==1):
+  if (y==0 ):
     left=False
-  if (y==w-1 or m[x][y+1]==2 or m[x][y+1]==1):
+  elif(m[x][y-1]==2 or m[x][y-1]==1):
+    left=False   
+    
+  if (y==w-1 ):
     right=False
-  if (x==0 or m[x-1][y]==2 or m[x-1][y]==1):
+  elif(m[x][y+1]==2 or m[x][y+1]==1):
+    right=False
+    
+  if (x==0 ):
     up=False
-  if (x==h-1 or m[x+1][y]==2 or m[x+1][y]==1):
-    down=False
+  elif(or m[x-1][y]==2 or m[x-1][y]==1):
+    up=False
 
+  if (x==h-1 ):
+    down=False
+  elif(m[x+1][y]==2 or m[x+1][y]==1):
+    down=False
 
   up_nbr=0
   if (up):
